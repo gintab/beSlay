@@ -1,2 +1,2 @@
 # beSlay
- 目指せslaythespire
+ローグライク型カードゲーム
