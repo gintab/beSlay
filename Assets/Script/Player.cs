@@ -10,6 +10,8 @@ public class Player : SingletonMonoBehaviour<Player>
     private int currentHP;
     [SerializeField]
     UnityEngine.UI.Text hpText; // HPを表示するテキスト
+    [SerializeField]
+    UnityEngine.UI.Slider m_slider;
 
     public LayerMask cardLayer; // カードのレイヤー
 
@@ -19,6 +21,8 @@ public class Player : SingletonMonoBehaviour<Player>
     {
         selectedCard = null;
         currentHP = MaxHP;
+        m_slider.maxValue = MaxHP;
+        m_slider.minValue = 0;
     }
 
     void Update()
@@ -86,5 +90,6 @@ public class Player : SingletonMonoBehaviour<Player>
     {
         currentHP += value;
         hpText.text = currentHP.ToString() + "/" + MaxHP;
+        m_slider.value = currentHP;
     }
 }

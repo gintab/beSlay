@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     private int currentHP; // 現在のHP
 
     public Text hpText; // HPを表示するテキスト
+    public Slider m_hpSlider; //HPゲージ
 
     public int maxAttackCount = 1;
     private int attackCount;
@@ -15,6 +16,8 @@ public class Enemy : MonoBehaviour
         attackCount = maxAttackCount;
         currentHP = maxHP; // 最大HPで初期化
         UpdateHPText(); // HPテキストを更新
+        UpdateHPSlider();//HPSlider更新
+        m_hpSlider.maxValue = maxHP;
     }
 
     // HPを減らすメソッド
@@ -23,6 +26,7 @@ public class Enemy : MonoBehaviour
         currentHP -= damage; // ダメージを適用
         currentHP = Mathf.Clamp(currentHP, 0, maxHP); // HPが0未満にならないようにする
         UpdateHPText(); // HPテキストを更新
+        UpdateHPSlider();//HPSlider更新
 
         // HPが0になったら敵を破壊するなどの処理を追加する
         if (currentHP <= 0)
@@ -36,7 +40,15 @@ public class Enemy : MonoBehaviour
     {
         if (hpText != null)
         {
-            hpText.text = "HP: " + currentHP.ToString(); // HPテキストを更新
+            hpText.text = currentHP.ToString() + "/" + maxHP.ToString(); // HPテキストを更新
+        }
+    }
+    // HPスライダーを更新するメソッド
+    void UpdateHPSlider()
+    {
+        if (m_hpSlider != null)
+        {
+            m_hpSlider.value = currentHP; // HPスライダー更新
         }
     }
     public virtual void Attack()
