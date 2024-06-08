@@ -3444,6 +3444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   hpText: {fileID: 438283570}
+  m_hpSlider: {fileID: 0}
   maxAttackCount: 1
   attackDamage: 3
 --- !u!1 &1992538782
@@ -4427,6 +4428,77 @@ PrefabInstance:
       propertyPath: handPos
       value: 
       objectReference: {fileID: 1421666414}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[0]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 0ab322ed2ec23e74cbc1faad633487a4,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[1]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 5a6949c0953f8a841a707ed83b86b1ca,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[2]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 5a6949c0953f8a841a707ed83b86b1ca,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[3]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 5a6949c0953f8a841a707ed83b86b1ca,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[4]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 5a6949c0953f8a841a707ed83b86b1ca,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[5]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 5a6949c0953f8a841a707ed83b86b1ca,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[6]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 4ac8d1ac34c4a934aa0b17c249bf9280,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[7]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 4ac8d1ac34c4a934aa0b17c249bf9280,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[8]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 4ac8d1ac34c4a934aa0b17c249bf9280,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[9]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 4ac8d1ac34c4a934aa0b17c249bf9280,
+        type: 3}
+    - target: {fileID: 6469029476981530726, guid: 38be2cd7149c0cf44abe369d0c77420e,
+        type: 3}
+      propertyPath: StartDeck.Array.data[10]
+      value: 
+      objectReference: {fileID: 5546371837355562892, guid: 0ab322ed2ec23e74cbc1faad633487a4,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

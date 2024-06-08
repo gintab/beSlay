@@ -32,57 +32,62 @@ public class Player : SingletonMonoBehaviour<Player>
             // マウスの左クリックを検出
             if (Input.GetMouseButtonDown(0))
             {
-                //RaycastAllの引数（PointerEventData）作成
-                PointerEventData pointData = new PointerEventData(EventSystem.current);
+                //マウスのある位置を取得(スクリーン座標)
+                Vector3 MousePoint = Input.mousePosition;
+                //スクリーン座標をワールド座標に変換
+                MousePoint = Camera.main.ScreenToWorldPoint(MousePoint);
 
-                //RaycastAllの結果格納用List
-                List<RaycastResult> RayResult = new List<RaycastResult>();
+                //マウスのある位置から、奥(0, 0, 1)に向かってRayを発射（ワールド座標）
+                RaycastHit2D[] hit2D = Physics2D.RaycastAll(MousePoint, Vector3.forward);
 
-                //PointerEventDataにマウスの位置をセット
-                pointData.position = Input.mousePosition;
-                //RayCast（スクリーン座標）
-                EventSystem.current.RaycastAll(pointData, RayResult);
-
-                foreach (RaycastResult result in RayResult)
+                //Rayがhitしたオブジェクトに目的のオブジェクトがあるかチェック
+                foreach (RaycastHit2D hit in hit2D)
                 {
-                    //中身の確認処理
+                    //なにかと衝突した時だけそのオブジェクトの名前をログに出す
+                    if (hit.collider)
+                    {
+                        Debug.Log("クリック対象：" + hit.collider.gameObject.name);
+                        //中身の確認処理;
 
-                    // カードをクリックした場合
-                    if (result.gameObject.CompareTag("Card"))
-                    {
-                        if (selectedCard != null)
+                        // カードをクリックした場合
+                        if (hit.collider.gameObject.CompareTag("Card"))
                         {
-                            selectedCard.UnSelect();
-                            if (selectedCard.gameObject == result.gameObject)
+                            if (selectedCard != null)
                             {
-                                selectedCard = null;
-                                break;　//同じカードをクリックした場合は解除のみ  
+                                selectedCard.UnSelect();
+                                if (selectedCard.gameObject == hit.collider.gameObject)
+                                {
+                                    selectedCard = null;
+                                    return;
+                                }
                             }
+                            selectedCard = hit.collider.gameObject.GetComponent<Card>();
+                            // カードを選択状態にする
+                            if (selectedCard.isSelected == false && DeckManager.Instance.isSelectedHand == false)
+                            {
+                                selectedCard.Select();
+                            }
+                            return;
                         }
-                        selectedCard = result.gameObject.GetComponent<Card>();
-                        // カードを選択状態にする
-                        if (selectedCard.isSelected == false && DeckManager.Instance.isSelectedHand == false)
+                        else if (hit.collider.gameObject.CompareTag("Enemy"))
                         {
-                            selectedCard.Select();
+                            // カードを選択
+                            if (selectedCard != null && selectedCard.isSelected && DeckManager.Instance.CurrentCost > 0)
+                            {
+                                selectedCard.Use(hit.collider.gameObject.GetComponent<Enemy>());
+                                selectedCard = null;
+                            }
+                            return;
                         }
-                        break;
-                    }
-                    else if (result.gameObject.CompareTag("Enemy"))
-                    {
-                        // カードを選択
-                        if (selectedCard != null && selectedCard.isSelected && DeckManager.Instance.CurrentCost > 0)
+                        else
                         {
-                            selectedCard.Use(result.gameObject.GetComponent<Enemy>());                            
+                            if (selectedCard != null) selectedCard.UnSelect();
                             selectedCard = null;
                         }
-                        break;
-                    }
-                    else
-                    {
-                        if (selectedCard != null) selectedCard.UnSelect();
-                        selectedCard = null;
                     }
                 }
+
+                
             }
         }
     }

@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class UImanager : MonoBehaviour
+public class UImanager : Editor
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnInspectorGUI()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // SerializeFieldを更新した場合の処理
+        if (GUI.changed)
+        {
+            // SceneViewのUIを更新
+            SceneView.RepaintAll();
+        }
     }
 }

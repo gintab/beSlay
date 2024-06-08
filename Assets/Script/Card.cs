@@ -24,6 +24,16 @@ public class Card : MonoBehaviour
     public int Rarity;// レア度
     [SerializeField]
     public string CardName = "";
+    [SerializeField]
+    public string effectText = "";
+
+    [SerializeField]
+    UnityEngine.UI.Text cost_txt;
+    [SerializeField]
+    UnityEngine.UI.Text effect_txt;
+    [SerializeField]
+    UnityEngine.UI.Text cardName_txt;
+
     public bool isSelected = false;
     // カード使用時のイベント
     public event Action<Card> OnCardUsed;
@@ -90,5 +100,11 @@ public class Card : MonoBehaviour
         {
             OnCardUnSelected(this);
         }
+    }
+    public void OnGUI()
+    {
+        if (cost_txt) cost_txt.text = Cost.ToString();
+        if (effect_txt) effect_txt.text = effectText;
+        if (cardName_txt) cardName_txt.text = CardName;
     }
 }
