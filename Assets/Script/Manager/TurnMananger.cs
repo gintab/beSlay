@@ -48,7 +48,7 @@ public class TurnManager : SingletonMonoBehaviour<TurnManager>
     {
         currentTurn = Turn.Ally;
         OnEnemyTurn += DeckManager.Instance.DisposeHandAll;
-        OnEnemyTurn += EnemyManager.Instance.StepAttackCount;
+        OnEnemyTurn += EnemyManager.Instance.AttackEnemies;
         //Ø‚è‘Ö‚¦
         DeckManager Instance = DeckManager.Instance;
         OnAllyTurn += Instance.ResetCost;//ƒRƒXƒg‰Šú‰»

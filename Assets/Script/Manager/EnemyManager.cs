@@ -12,11 +12,11 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
     {
         currentEnemies = stageEnemies;
     }
-    public void StepAttackCount()
+    public void AttackEnemies()
     {
         foreach (var enemy in currentEnemies)
         {
-            enemy.StepCount();
+            enemy.Attack();
         }
     }
 }
