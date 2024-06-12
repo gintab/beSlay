@@ -1509,18 +1509,6 @@ LightingSettings:
   m_PVRTiledBaking: 0
   m_NumRaysToShootPerTexel: -1
   m_RespectSceneVisibilityWhenBakingGI: 0
---- !u!114 &1076710150 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4358268136888673257, guid: 5f38ea689e621bb49b9aceaa97b42698,
-    type: 3}
-  m_PrefabInstance: {fileID: 1638890326430033839}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1103630474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,6 +1593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1108030474}
+  - component: {fileID: 1108030475}
   m_Layer: 5
   m_Name: EnemyPool
   m_TagString: Untagged
@@ -1629,9 +1618,35 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 435, y: -22}
+  m_AnchoredPosition: {x: 324, y: -3}
   m_SizeDelta: {x: 100, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1108030475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108030473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1116279005
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,11 +3343,6 @@ PrefabInstance:
       propertyPath: hpText
       value: 
       objectReference: {fileID: 873057572}
-    - target: {fileID: 2413430604193375098, guid: 5f38ea689e621bb49b9aceaa97b42698,
-        type: 3}
-      propertyPath: sliderHPtext
-      value: 
-      objectReference: {fileID: 1076710150}
     - target: {fileID: 6214880405340532530, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
       propertyPath: m_Name
@@ -3341,12 +3351,12 @@ PrefabInstance:
     - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.15094
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
@@ -3356,22 +3366,22 @@ PrefabInstance:
     - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
-        type: 3}
-      propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
+        type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
@@ -3381,7 +3391,7 @@ PrefabInstance:
     - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7140187908478880256, guid: 5f38ea689e621bb49b9aceaa97b42698,
         type: 3}
@@ -3750,32 +3760,32 @@ PrefabInstance:
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 129
       objectReference: {fileID: 0}
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
@@ -3820,7 +3830,7 @@ PrefabInstance:
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 784641995470066526, guid: ef239bb2ef4a1234585980b2071b85ba,
         type: 3}
