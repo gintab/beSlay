@@ -5,6 +5,7 @@ using System.Net.Security;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class Player : SingletonMonoBehaviour<Player>
 {
@@ -91,7 +92,9 @@ public class Player : SingletonMonoBehaviour<Player>
                             // カードを選択
                             if (selectedCard != null && selectedCard.isSelected && DeckManager.Instance.CurrentCost > 0)
                             {
-                                selectedCard.Use(result.gameObject.GetComponent<Enemy>());
+                                List<Enemy> enemy = new List<Enemy>();
+                                enemy.Add(result.gameObject.GetComponent<Enemy>());
+                                selectedCard.Use(enemy);
                                 selectedCard = null;
                             }
                             return;

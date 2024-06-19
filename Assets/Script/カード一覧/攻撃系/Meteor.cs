@@ -9,10 +9,10 @@ public class Meteor : AttackSpell
 
     }
 
-    public override void Use(Enemy enemy)
+    public override void Use(List<Enemy> enemies)
     {
-        base.Use(enemy);
+        base.Use(enemies);
         //g—pŒø‰Ê
-        enemy.TakeDamage(Damage);
+        base.Attack(enemies);
     }
 }

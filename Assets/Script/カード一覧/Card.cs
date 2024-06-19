@@ -61,7 +61,7 @@ public class Card : MonoBehaviour
     }
 
     // カードを使用するメソッド
-    public virtual void Use(Enemy enemy)
+    public virtual void Use(List<Enemy> enemy)
     {
         if (isSelected)
         {
@@ -76,12 +76,29 @@ public class Card : MonoBehaviour
         }
     }
 
+    // カードを使用するメソッド(非選択)
+    public virtual void UseUnselect(List<Enemy> enemy)
+    {
+        if (isSelected)
+        {
+            // カードを使用するたびにコストを消費する
+            Debug.Log($"カードを使用しました。コスト: {Cost}");
+
+            // カード使用時のイベントを発行
+            if (OnCardUsed != null)
+            {
+                OnCardUsed(this);
+            }
+        }
+    }
+
+
     // カードの情報を表示するメソッド
     public void ShowInfo()
     {
         Debug.Log($"カード情報 - , 名前: {CardName}, タイプ: {Type}, コスト: {Cost}, レア度: {Rarity}");
     }
-    public void Select()
+    public virtual void Select()
     {
         this.gameObject.transform.localScale = new Vector2(defalutScaleX * 1.5f,defalutScaleY * 1.5f);
         isSelected = true;
@@ -107,4 +124,6 @@ public class Card : MonoBehaviour
         if (effect_txt) effect_txt.text = effectText;
         if (cardName_txt) cardName_txt.text = CardName;
     }
+
+    
 }

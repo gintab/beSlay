@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public int maxHP = 100; // 最大HP
     private int currentHP; // 現在のHP
+    private int blockValue; //ブロック値
 
     public Text hpText; // HPを表示するテキスト
     public Slider m_hpSlider; //HPゲージ
@@ -25,9 +27,19 @@ public class Enemy : MonoBehaviour
         m_hpSlider.value = currentHP;
     }
 
-    // HPを減らすメソッド
-    public void TakeDamage(int damage)
+    /// <summary>
+    /// 攻撃を受けた
+    /// </summary>
+    /// <param name="damage">受けるダメージ</param>
+    /// <param name="penet">貫通値</param>
+    public void TakeDamage(int damage,int penet = 0)
     {
+        if (blockValue > 0)
+        {
+            blockValue -= damage;
+            damage =  damage - blockValue;
+        }
+        if (damage <= 0) return;
         currentHP -= damage; // ダメージを適用
         currentHP = Mathf.Clamp(currentHP, 0, maxHP); // HPが0未満にならないようにする
         UpdateHPText(); // HPテキストを更新

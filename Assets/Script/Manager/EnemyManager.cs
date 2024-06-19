@@ -19,4 +19,12 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
             enemy.Attack();
         }
     }
+    public List<Enemy> GetAllEnemies()
+    {
+        return currentEnemies;
+    }
+    public Enemy GetRandomEnemy()
+    {
+        return AllManager.GetRandom(currentEnemies);
+    }
 }

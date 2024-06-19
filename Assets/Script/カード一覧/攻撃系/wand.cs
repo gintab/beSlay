@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wand : AttackSpell
+public class Wand : AttackSpell
 {
-    public wand(int cost, int rarity, int damage,string cardName) : base(cost, rarity, damage,cardName)
+    public Wand(int cost, int rarity, int damage,string cardName) : base(cost, rarity, damage,cardName)
     {
 
     }
 
-    public override void Use(Enemy enemy)
+    public override void Use(List<Enemy> enemy)
     {
         base.Use(enemy);
         //Žg—pŽžŒø‰Ê
-        enemy.TakeDamage(Damage);
+        base.Attack(enemy);
     }
 }

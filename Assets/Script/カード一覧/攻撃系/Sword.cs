@@ -9,10 +9,10 @@ public class Sword : AttackSpell
 
     }
 
-    public override void Use(Enemy enemy)
+    public override void Use(List<Enemy> enemy)
     {
         base.Use(enemy);
         //g—pŒø‰Ê
-        enemy.TakeDamage(Damage);
+        base.Attack(enemy);
     }
 }
