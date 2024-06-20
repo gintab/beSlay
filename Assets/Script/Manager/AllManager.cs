@@ -9,6 +9,7 @@ public class AllManager : SingletonMonoBehaviour<AllManager>
     public bool gameIsOver;
     TurnManager m_turnManager;
     DeckManager m_deckManager;
+    BattleManager m_BattleManager;
 
     // ƒQ[ƒ€‚ÌŠJnˆ—
     void Start()
@@ -16,6 +17,7 @@ public class AllManager : SingletonMonoBehaviour<AllManager>
         gameIsOver = false;
         m_turnManager = TurnManager.Instance;
         m_deckManager = DeckManager.Instance;
+        m_BattleManager = BattleManager.Instance;
         BattleStart();
     }
 
@@ -23,6 +25,7 @@ public class AllManager : SingletonMonoBehaviour<AllManager>
     {
         m_deckManager.StartBattle();
         m_turnManager.StartBattle();
+        m_BattleManager.BattleStart();
     }
     /// <summary>
     /// ”•b‘Ò‚Á‚Ä‚©‚çÀs‚·‚é

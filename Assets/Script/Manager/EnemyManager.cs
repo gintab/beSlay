@@ -5,12 +5,15 @@ using UnityEngine;
 public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
 {
     [SerializeField]
-    List<Enemy> stageEnemies;
+    public List<Enemy> stageEnemies;
     private List<Enemy> currentEnemies;
+    public GameObject enemyPool;
 
     private void Start()
     {
         currentEnemies = stageEnemies;
+        for Each
+        currentEnemies
     }
     public void AttackEnemies()
     {
