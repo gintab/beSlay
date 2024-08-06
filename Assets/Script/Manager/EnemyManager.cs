@@ -12,12 +12,16 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
     private void Start()
     {
         currentEnemies = stageEnemies;
-        for Each
-        currentEnemies
+        foreach (Enemy enem in currentEnemies)
+        {
+            enem.InitStatus();
+            GameObject instance = Instantiate(enem.gameObject);
+            instance.gameObject.transform.parent = enemyPool.transform;
+        }
     }
     public void AttackEnemies()
     {
-        foreach (var enemy in currentEnemies)
+        foreach (Enemy enemy in currentEnemies)
         {
             enemy.Attack();
         }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2958580414319278183}
   - component: {fileID: 1412097456947281713}
   m_Layer: 7
-  m_Name: AttackUI
+  m_Name: Action_Icon_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,11 +493,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c6a8fc710c1bc448af3509ceac672f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 21300000, guid: 280e36f98ae77dd4f8ba2e1a638d3f9f, type: 3}
+  defense: {fileID: 0}
+  normal: {fileID: 0}
   maxHP: 100
   hpText: {fileID: 7502737132267057198}
   m_hpSlider: {fileID: 139473382018517428}
   AttackValueText: {fileID: 7459214378040504008}
   defaultDamage: 6
+  actionIcon: {fileID: 0}
 --- !u!1 &7754356415935470287
 GameObject:
   m_ObjectHideFlags: 0
